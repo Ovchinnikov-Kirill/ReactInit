@@ -36,6 +36,16 @@ const Btn = function() {
   return <button>{logged ? text : 'noclick'}</button>
 }
 
+////////About props
+function WhoAmI({name, surname, link}) {
+  return (
+    <div>
+      <h1>My name is {name.firstName}, surname - {surname}</h1>
+      <a href={link}>My profile</a>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -44,6 +54,8 @@ function App() {
       </StrictMode>
       <Field/>
       <Btn/>
+      <WhoAmI name={{firstName: 'John'}} surname="Smith" link="facebook.com"/>
+      <WhoAmI name={{firstName: 'Kirill'}} surname="Ovchinnikov" link="facebook.com"/>
     </div>
   );
 }
